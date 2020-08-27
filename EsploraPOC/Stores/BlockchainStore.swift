@@ -25,8 +25,7 @@ class BlockchainStore {
     ]
 
     func loadWallets(completion: @escaping ([Wallet]) -> Void) {
-
-
+        wallets = [Wallet]() // reset to avoid accumulated wallets
         let dispatchGroup = DispatchGroup()
         DispatchQueue.global().async {
             for address in BlockchainStore.addresses {
