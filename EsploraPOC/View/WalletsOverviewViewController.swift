@@ -50,7 +50,9 @@ class WalletsOverviewViewController: UIViewController {
     private func loadData() {
         viewModel.loadWallets { _ in
             DispatchQueue.main.async {
+                print("done loading wallet")
                 self.collectionView.reloadData()
+                self.balanceLabel.text = self.viewModel.balanceTitle
             }
         }
     }
@@ -82,8 +84,6 @@ extension WalletsOverviewViewController: ViewSetupable {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: view.bounds.width - 20, height: 70)
         collectionView.setCollectionViewLayout(layout, animated: false)
-        
-        balanceLabel.text = "Total Balance: 8888888 BTC"
     }
     
     func setupConstraints() {

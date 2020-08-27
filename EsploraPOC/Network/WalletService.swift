@@ -37,9 +37,8 @@ class WalletService {
             case .failure(let error):
                 print(error.localizedDescription)
             case .success(let data):
-                let str = String(data: data, encoding: .utf8)
-                print(str)
-                let wallet = Wallet(address: "")
+                let remoteWallet: RemoteWallet = try! JSONDecoder().decode(RemoteWallet.self, from: data)
+                let wallet = Wallet(remoteWallet: remoteWallet)
                 completion(.success(wallet))
             }
         }

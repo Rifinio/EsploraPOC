@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Transaction {
+struct Transaction{
     let txid: String
     let fee: Double
     var isConfirmed: Bool
