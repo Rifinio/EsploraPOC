@@ -21,7 +21,7 @@ class BlockchainStore {
         "tb1qrry6ycll2x0h2r6jfnz8u2lzcl03zv4nahhxjl",
         "tb1qpsuz7zn3ff3t636yyrh4v2u8fkenh2n7d66mug",
     ]
-    
+
     func loadWallets(completion: ([Wallet]) -> Void) {
         let wallets = BlockchainStore.addresses.map { return Wallet(address: $0)}
         completion(wallets)

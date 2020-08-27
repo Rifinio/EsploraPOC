@@ -17,6 +17,10 @@
 		6340EC6824F825A5007A1CDA /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6724F825A5007A1CDA /* Wallet.swift */; };
 		6340EC6A24F825C5007A1CDA /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6924F825C5007A1CDA /* Transaction.swift */; };
 		6340EC6D24F82762007A1CDA /* BlockchainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6C24F82762007A1CDA /* BlockchainStore.swift */; };
+		6340EC7024F82BB0007A1CDA /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6F24F82BB0007A1CDA /* HttpClient.swift */; };
+		6340EC7424F82D54007A1CDA /* WalletViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7324F82D54007A1CDA /* WalletViewCell.swift */; };
+		6340EC7624F82D8B007A1CDA /* ViewSetupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */; };
+		6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7824F82E29007A1CDA /* AppStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		6340EC6724F825A5007A1CDA /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		6340EC6924F825C5007A1CDA /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		6340EC6C24F82762007A1CDA /* BlockchainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainStore.swift; sourceTree = "<group>"; };
+		6340EC6F24F82BB0007A1CDA /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		6340EC7324F82D54007A1CDA /* WalletViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCell.swift; sourceTree = "<group>"; };
+		6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetupable.swift; sourceTree = "<group>"; };
+		6340EC7824F82E29007A1CDA /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +93,12 @@
 		6340EC3D24F82320007A1CDA /* EsploraPOC */ = {
 			isa = PBXGroup;
 			children = (
+				6340EC6E24F82B9F007A1CDA /* Network */,
 				6340EC6B24F82745007A1CDA /* Stores */,
 				6340EC6624F82597007A1CDA /* Models */,
 				6340EC6124F82512007A1CDA /* ViewModel */,
 				6340EC6024F824E6007A1CDA /* View */,
+				6340EC7724F82E12007A1CDA /* Theme */,
 				6340EC3E24F82320007A1CDA /* AppDelegate.swift */,
 				6340EC4024F82320007A1CDA /* SceneDelegate.swift */,
 				6340EC4724F82322007A1CDA /* Assets.xcassets */,
@@ -110,7 +120,9 @@
 		6340EC6024F824E6007A1CDA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */,
 				6340EC6424F8255F007A1CDA /* WalletsOverviewViewController.swift */,
+				6340EC7324F82D54007A1CDA /* WalletViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +150,22 @@
 				6340EC6C24F82762007A1CDA /* BlockchainStore.swift */,
 			);
 			path = Stores;
+			sourceTree = "<group>";
+		};
+		6340EC6E24F82B9F007A1CDA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6340EC6F24F82BB0007A1CDA /* HttpClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6340EC7724F82E12007A1CDA /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				6340EC7824F82E29007A1CDA /* AppStyle.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +270,11 @@
 			files = (
 				6340EC6824F825A5007A1CDA /* Wallet.swift in Sources */,
 				6340EC6524F8255F007A1CDA /* WalletsOverviewViewController.swift in Sources */,
+				6340EC7024F82BB0007A1CDA /* HttpClient.swift in Sources */,
 				6340EC6A24F825C5007A1CDA /* Transaction.swift in Sources */,
+				6340EC7624F82D8B007A1CDA /* ViewSetupable.swift in Sources */,
+				6340EC7424F82D54007A1CDA /* WalletViewCell.swift in Sources */,
+				6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */,
 				6340EC6D24F82762007A1CDA /* BlockchainStore.swift in Sources */,
 				6340EC6324F82525007A1CDA /* WalletsOverviewViewModel.swift in Sources */,
 				6340EC3F24F82320007A1CDA /* AppDelegate.swift in Sources */,
