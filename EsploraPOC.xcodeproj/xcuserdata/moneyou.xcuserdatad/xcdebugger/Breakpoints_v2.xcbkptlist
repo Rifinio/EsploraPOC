@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "81C7A50B-7079-4977-ADC4-E4485DD21F88"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6E7DFCF-ACC3-4729-AD99-086563B85747"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EsploraPOC/ViewModel/WalletsOverviewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "loadWallets(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25D27D03-0C35-42CA-B00A-0488E66AC47F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EsploraPOC/Stores/BlockchainStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "loadWallets(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25D27D03-0C35-42CA-B00A-0488E66AC47F - a6ef280b31ed715b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EsploraPOC.BlockchainStore.loadWallets(completion: (Swift.Array&lt;EsploraPOC.Wallet&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "EsploraPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moneyou/Documents/rifinio/ios-projects/BlockStream/EsploraPOC/EsploraPOC/Stores/BlockchainStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  uuid = "25D27D03-0C35-42CA-B00A-0488E66AC47F - d42ca56e2b2780ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; EsploraPOC.Wallet in EsploraPOC.BlockchainStore.loadWallets(completion: (Swift.Array&lt;EsploraPOC.Wallet&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "EsploraPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moneyou/Documents/rifinio/ios-projects/BlockStream/EsploraPOC/EsploraPOC/Stores/BlockchainStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18C146DA-F51B-4F8D-BDED-E1306AAF5E1A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EsploraPOC/Stores/BlockchainStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "loadWallets(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -21,7 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let navController = UINavigationController(rootViewController: WalletsOverviewViewController())
+        let blockChainStore = BlockchainStore()
+        let walletsViewModel = WalletsOverviewViewModel(blockChainStore: blockChainStore)
+        let walletOverviewVC = WalletsOverviewViewController(viewModel: walletsViewModel)
+        let navController = UINavigationController(rootViewController: walletOverviewVC)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }

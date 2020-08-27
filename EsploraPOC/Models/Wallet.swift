@@ -13,3 +13,11 @@ struct Wallet {
     var balance: Double
     var transactions: [Transaction]
 }
+
+extension Wallet {
+    init(address: String) {
+        self.address = address
+        balance = 0.0
+        transactions = [Transaction]()
+    }
+}
