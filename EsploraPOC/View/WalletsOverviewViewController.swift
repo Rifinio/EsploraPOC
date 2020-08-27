@@ -49,7 +49,9 @@ class WalletsOverviewViewController: UIViewController {
     
     private func loadData() {
         viewModel.loadWallets { _ in
-            print("done")
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
 }
@@ -58,7 +60,7 @@ extension WalletsOverviewViewController: ViewSetupable {
     func theme() {
         // navigation
         navigationController?.navigationBar.prefersLargeTitles = true
-        let textAttributes = [NSAttributedString.Key.foregroundColor: AppStyle.Color.accent]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: AppStyle.Color.white]
         navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
         // ui elements
         view.backgroundColor = AppStyle.Color.primary
@@ -70,12 +72,16 @@ extension WalletsOverviewViewController: ViewSetupable {
     func setupView() {
         view.backgroundColor = .white
         title = "Esplora Wallets"
-        
-        
+
         view.addSubview(balanceLabel)
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(WalletViewCell.self, forCellWithReuseIdentifier: WalletViewCell.identifier)
+        // collection view layout
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: view.bounds.width - 20, height: 70)
+        collectionView.setCollectionViewLayout(layout, animated: false)
         
         balanceLabel.text = "Total Balance: 8888888 BTC"
     }
@@ -98,7 +104,16 @@ extension WalletsOverviewViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WalletViewCell.identifier, for: indexPath) as! WalletViewCell
+        let cellVM = viewModel.viewModelForCellAt(indexPath: indexPath)
+        cell.configure(viewModel: cellVM)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIViewController()
+        vc.view.backgroundColor = .yellow
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

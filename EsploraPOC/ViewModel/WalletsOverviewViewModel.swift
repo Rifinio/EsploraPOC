@@ -23,4 +23,8 @@ class WalletsOverviewViewModel {
             completion(wallets)
         }
     }
+    
+    func viewModelForCellAt(indexPath: IndexPath) -> WalletViewCellViewModel {
+        return WalletViewCellViewModel(wallet: wallets[indexPath.row])
+    }
 }
