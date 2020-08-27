@@ -21,6 +21,7 @@
 		6340EC7424F82D54007A1CDA /* WalletViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7324F82D54007A1CDA /* WalletViewCell.swift */; };
 		6340EC7624F82D8B007A1CDA /* ViewSetupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */; };
 		6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7824F82E29007A1CDA /* AppStyle.swift */; };
+		6340EC7C24F837D4007A1CDA /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7B24F837D4007A1CDA /* WalletService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		6340EC7324F82D54007A1CDA /* WalletViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCell.swift; sourceTree = "<group>"; };
 		6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetupable.swift; sourceTree = "<group>"; };
 		6340EC7824F82E29007A1CDA /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		6340EC7B24F837D4007A1CDA /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				6340EC6F24F82BB0007A1CDA /* HttpClient.swift */,
+				6340EC7B24F837D4007A1CDA /* WalletService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				6340EC6524F8255F007A1CDA /* WalletsOverviewViewController.swift in Sources */,
 				6340EC7024F82BB0007A1CDA /* HttpClient.swift in Sources */,
 				6340EC6A24F825C5007A1CDA /* Transaction.swift in Sources */,
+				6340EC7C24F837D4007A1CDA /* WalletService.swift in Sources */,
 				6340EC7624F82D8B007A1CDA /* ViewSetupable.swift in Sources */,
 				6340EC7424F82D54007A1CDA /* WalletViewCell.swift in Sources */,
 				6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */,

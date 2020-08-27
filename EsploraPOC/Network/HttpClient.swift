@@ -12,6 +12,8 @@ enum NetworkError: Error {
     case noDataOrError
 }
 
+// HttpClient responsible only for making requests and handling responses.
+// Can easily inject a networking framwork to do the complex work
 class HttpClient {
     static let shared = HttpClient()
     let session: URLSession = URLSession(configuration: .default)

@@ -9,6 +9,7 @@
 import Foundation
 
 class BlockchainStore {
+    private let service: WalletService
     static let addresses: [String] = [
         "tb1qvjc7jq8szaln85wutm6dsxgjm7vw8vk9ypdtgz",
         "tb1qn3lrfwgpxhrmt5qef0x9s9er40wevuz2aqglz6",
@@ -26,4 +27,20 @@ class BlockchainStore {
         let wallets = BlockchainStore.addresses.map { return Wallet(address: $0)}
         completion(wallets)
     }
+    
+    init(service: WalletService) {
+        self.service = service
+    }
+    
+    func loadWallet(wallet: Wallet, completion: @escaping (Wallet?) -> Void) {
+        service.loadWallet(address: wallet.address) { (result) in
+            switch result {
+            case .success(let wallet):
+                completion(wallet)
+            case .failure(_):
+                completion(nil)
+            }
+        }
+    }
+    
 }

@@ -25,6 +25,11 @@ class WalletsOverviewViewModel {
     }
     
     func viewModelForCellAt(indexPath: IndexPath) -> WalletViewCellViewModel {
+
+        blockChainStore.loadWallet(wallet: wallets[indexPath.row]) { _ in
+            print("loaded")
+        }
         return WalletViewCellViewModel(wallet: wallets[indexPath.row])
+        
     }
 }
