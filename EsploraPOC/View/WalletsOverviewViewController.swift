@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WalletsOverviewViewController.swift
 //  EsploraPOC
 //
 //  Created by Adil Bougamza on 27/08/2020.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WalletsOverviewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        title = "Esplora Wallets"
     }
 }
 

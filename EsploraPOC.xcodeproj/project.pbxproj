@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		6340EC3F24F82320007A1CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC3E24F82320007A1CDA /* AppDelegate.swift */; };
 		6340EC4124F82320007A1CDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC4024F82320007A1CDA /* SceneDelegate.swift */; };
-		6340EC4324F82320007A1CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC4224F82320007A1CDA /* ViewController.swift */; };
 		6340EC4824F82322007A1CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6340EC4724F82322007A1CDA /* Assets.xcassets */; };
 		6340EC4B24F82322007A1CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6340EC4924F82322007A1CDA /* LaunchScreen.storyboard */; };
 		6340EC5624F82322007A1CDA /* EsploraPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC5524F82322007A1CDA /* EsploraPOCTests.swift */; };
+		6340EC6324F82525007A1CDA /* WalletsOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6224F82525007A1CDA /* WalletsOverviewViewModel.swift */; };
+		6340EC6524F8255F007A1CDA /* WalletsOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6424F8255F007A1CDA /* WalletsOverviewViewController.swift */; };
+		6340EC6824F825A5007A1CDA /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6724F825A5007A1CDA /* Wallet.swift */; };
+		6340EC6A24F825C5007A1CDA /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC6924F825C5007A1CDA /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,16 @@
 		6340EC3B24F82320007A1CDA /* EsploraPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EsploraPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6340EC3E24F82320007A1CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6340EC4024F82320007A1CDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6340EC4224F82320007A1CDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6340EC4724F82322007A1CDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6340EC4A24F82322007A1CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6340EC4C24F82322007A1CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6340EC5124F82322007A1CDA /* EsploraPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EsploraPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6340EC5524F82322007A1CDA /* EsploraPOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsploraPOCTests.swift; sourceTree = "<group>"; };
 		6340EC5724F82322007A1CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6340EC6224F82525007A1CDA /* WalletsOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsOverviewViewModel.swift; sourceTree = "<group>"; };
+		6340EC6424F8255F007A1CDA /* WalletsOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletsOverviewViewController.swift; sourceTree = "<group>"; };
+		6340EC6724F825A5007A1CDA /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		6340EC6924F825C5007A1CDA /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +83,11 @@
 		6340EC3D24F82320007A1CDA /* EsploraPOC */ = {
 			isa = PBXGroup;
 			children = (
+				6340EC6624F82597007A1CDA /* Models */,
+				6340EC6124F82512007A1CDA /* ViewModel */,
+				6340EC6024F824E6007A1CDA /* View */,
 				6340EC3E24F82320007A1CDA /* AppDelegate.swift */,
 				6340EC4024F82320007A1CDA /* SceneDelegate.swift */,
-				6340EC4224F82320007A1CDA /* ViewController.swift */,
 				6340EC4724F82322007A1CDA /* Assets.xcassets */,
 				6340EC4924F82322007A1CDA /* LaunchScreen.storyboard */,
 				6340EC4C24F82322007A1CDA /* Info.plist */,
@@ -94,6 +102,31 @@
 				6340EC5724F82322007A1CDA /* Info.plist */,
 			);
 			path = EsploraPOCTests;
+			sourceTree = "<group>";
+		};
+		6340EC6024F824E6007A1CDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6340EC6424F8255F007A1CDA /* WalletsOverviewViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6340EC6124F82512007A1CDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6340EC6224F82525007A1CDA /* WalletsOverviewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6340EC6624F82597007A1CDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6340EC6724F825A5007A1CDA /* Wallet.swift */,
+				6340EC6924F825C5007A1CDA /* Transaction.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6340EC4324F82320007A1CDA /* ViewController.swift in Sources */,
+				6340EC6824F825A5007A1CDA /* Wallet.swift in Sources */,
+				6340EC6524F8255F007A1CDA /* WalletsOverviewViewController.swift in Sources */,
+				6340EC6A24F825C5007A1CDA /* Transaction.swift in Sources */,
+				6340EC6324F82525007A1CDA /* WalletsOverviewViewModel.swift in Sources */,
 				6340EC3F24F82320007A1CDA /* AppDelegate.swift in Sources */,
 				6340EC4124F82320007A1CDA /* SceneDelegate.swift in Sources */,
 			);

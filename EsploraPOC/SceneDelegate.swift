@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
+        let navController = UINavigationController(rootViewController: WalletsOverviewViewController())
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
 
