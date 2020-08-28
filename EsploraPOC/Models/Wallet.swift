@@ -48,6 +48,10 @@ extension Btc {
     var toSatoshi: Satoshi {
         return UInt64((self * Decimal(1000000000)).intValue)
     }
+    
+    var formattedWithSymbol: String {
+        return "₿ \(self)"
+    }
 }
 
 extension Decimal {
