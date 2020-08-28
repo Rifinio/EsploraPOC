@@ -10,6 +10,6 @@ import Foundation
 
 struct Transaction{
     let txid: String
-    let fee: Double
+    let fee: Satoshi
     var isConfirmed: Bool
 }

@@ -12,8 +12,8 @@ class WalletsOverviewViewModel {
     var wallets = [Wallet]()
     var balanceTitle: String = ""
     
-    private let blockChainStore: BlockchainStore
-    init(blockChainStore: BlockchainStore) {
+    private let blockChainStore: BlockchainStoreProtocol
+    init(blockChainStore: BlockchainStoreProtocol) {
         self.blockChainStore = blockChainStore
     }
     
@@ -21,11 +21,11 @@ class WalletsOverviewViewModel {
         blockChainStore.loadWallets { [weak self] wallets in
             guard let self = self else { return }
             self.wallets = wallets
-            var total = 0.0
+            var total: Satoshi = 0
             for w in wallets {
                 total += w.balance
             }
-            self.balanceTitle = "Total Balance: \(total) btc"
+            self.balanceTitle = "Total Balance: \(total.toBtc) btc"
             completion(wallets)
         }
     }

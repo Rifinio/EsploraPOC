@@ -22,6 +22,7 @@
 		6340EC7624F82D8B007A1CDA /* ViewSetupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */; };
 		6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7824F82E29007A1CDA /* AppStyle.swift */; };
 		6340EC7C24F837D4007A1CDA /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7B24F837D4007A1CDA /* WalletService.swift */; };
+		6340EC8224F9779F007A1CDA /* MockBlockchainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8124F9779F007A1CDA /* MockBlockchainStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetupable.swift; sourceTree = "<group>"; };
 		6340EC7824F82E29007A1CDA /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		6340EC7B24F837D4007A1CDA /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
+		6340EC8124F9779F007A1CDA /* MockBlockchainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBlockchainStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				6340EC6124F82512007A1CDA /* ViewModel */,
 				6340EC6024F824E6007A1CDA /* View */,
 				6340EC7724F82E12007A1CDA /* Theme */,
+				6340EC7F24F97778007A1CDA /* Mocks */,
 				6340EC3E24F82320007A1CDA /* AppDelegate.swift */,
 				6340EC4024F82320007A1CDA /* SceneDelegate.swift */,
 				6340EC4724F82322007A1CDA /* Assets.xcassets */,
@@ -169,6 +172,22 @@
 				6340EC7824F82E29007A1CDA /* AppStyle.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		6340EC7F24F97778007A1CDA /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6340EC8024F97789007A1CDA /* Stores */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		6340EC8024F97789007A1CDA /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				6340EC8124F9779F007A1CDA /* MockBlockchainStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +298,7 @@
 				6340EC7624F82D8B007A1CDA /* ViewSetupable.swift in Sources */,
 				6340EC7424F82D54007A1CDA /* WalletViewCell.swift in Sources */,
 				6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */,
+				6340EC8224F9779F007A1CDA /* MockBlockchainStore.swift in Sources */,
 				6340EC6D24F82762007A1CDA /* BlockchainStore.swift in Sources */,
 				6340EC6324F82525007A1CDA /* WalletsOverviewViewModel.swift in Sources */,
 				6340EC3F24F82320007A1CDA /* AppDelegate.swift in Sources */,

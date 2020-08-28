@@ -82,7 +82,7 @@ extension WalletsOverviewViewController: ViewSetupable {
         collectionView.register(WalletViewCell.self, forCellWithReuseIdentifier: WalletViewCell.identifier)
         // collection view layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.bounds.width - 20, height: 70)
+        layout.itemSize = CGSize(width: view.bounds.width - 20, height: 60)
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
     

@@ -8,13 +8,16 @@
 
 import Foundation
 
+protocol HttpClientProtocol {
+    func send(_ request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void)
+}
 enum NetworkError: Error {
     case noDataOrError
 }
 
 // HttpClient responsible only for making requests and handling responses.
 // Can easily inject a networking framwork to do the complex work
-class HttpClient {
+class HttpClient: HttpClientProtocol {
     static let shared = HttpClient()
     let session: URLSession = URLSession(configuration: .default)
     
@@ -35,6 +38,21 @@ class HttpClient {
         }
         
         task.resume()
+    }
+}
+
+class MockHttpClient: HttpClientProtocol {
+    var data: Data?
+    var error: Error?
+    func send(_ request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+        if let data = data {
+            completion(.success(data))
+            return
+        }
+        if let error = error {
+            completion(.failure(error))
+            return
+        }
     }
 }
 

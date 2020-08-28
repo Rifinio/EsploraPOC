@@ -8,7 +8,13 @@
 
 import Foundation
 
-class BlockchainStore {
+protocol BlockchainStoreProtocol {
+    func loadWallets(completion: @escaping ([Wallet]) -> Void)
+    func loadWallet(address: String, completion: @escaping (Wallet?) -> Void)
+}
+
+class BlockchainStore: BlockchainStoreProtocol {
+
     private let service: WalletService
     var wallets = [Wallet]()
     static let addresses: [String] = [
@@ -23,6 +29,10 @@ class BlockchainStore {
         "tb1qrry6ycll2x0h2r6jfnz8u2lzcl03zv4nahhxjl",
         "tb1qpsuz7zn3ff3t636yyrh4v2u8fkenh2n7d66mug",
     ]
+    
+    init(service: WalletService) {
+        self.service = service
+    }
 
     func loadWallets(completion: @escaping ([Wallet]) -> Void) {
         wallets = [Wallet]() // reset to avoid accumulated wallets
@@ -47,10 +57,6 @@ class BlockchainStore {
                 completion(self.wallets)
             }
         }
-    }
-    
-    init(service: WalletService) {
-        self.service = service
     }
     
     func loadWallet(address: String, completion: @escaping (Wallet?) -> Void) {
