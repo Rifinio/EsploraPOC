@@ -23,6 +23,8 @@
 		6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7824F82E29007A1CDA /* AppStyle.swift */; };
 		6340EC7C24F837D4007A1CDA /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC7B24F837D4007A1CDA /* WalletService.swift */; };
 		6340EC8224F9779F007A1CDA /* MockBlockchainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8124F9779F007A1CDA /* MockBlockchainStore.swift */; };
+		6340EC8424F99F45007A1CDA /* ConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8324F99F45007A1CDA /* ConversionService.swift */; };
+		6340EC8624F9A516007A1CDA /* WalletViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8524F9A516007A1CDA /* WalletViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		6340EC7824F82E29007A1CDA /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		6340EC7B24F837D4007A1CDA /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		6340EC8124F9779F007A1CDA /* MockBlockchainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBlockchainStore.swift; sourceTree = "<group>"; };
+		6340EC8324F99F45007A1CDA /* ConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionService.swift; sourceTree = "<group>"; };
+		6340EC8524F9A516007A1CDA /* WalletViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				6340EC6224F82525007A1CDA /* WalletsOverviewViewModel.swift */,
+				6340EC8524F9A516007A1CDA /* WalletViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				6340EC6F24F82BB0007A1CDA /* HttpClient.swift */,
 				6340EC7B24F837D4007A1CDA /* WalletService.swift */,
+				6340EC8324F99F45007A1CDA /* ConversionService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6340EC6824F825A5007A1CDA /* Wallet.swift in Sources */,
+				6340EC8424F99F45007A1CDA /* ConversionService.swift in Sources */,
 				6340EC6524F8255F007A1CDA /* WalletsOverviewViewController.swift in Sources */,
 				6340EC7024F82BB0007A1CDA /* HttpClient.swift in Sources */,
 				6340EC6A24F825C5007A1CDA /* Transaction.swift in Sources */,
@@ -301,6 +308,7 @@
 				6340EC8224F9779F007A1CDA /* MockBlockchainStore.swift in Sources */,
 				6340EC6D24F82762007A1CDA /* BlockchainStore.swift in Sources */,
 				6340EC6324F82525007A1CDA /* WalletsOverviewViewModel.swift in Sources */,
+				6340EC8624F9A516007A1CDA /* WalletViewCellViewModel.swift in Sources */,
 				6340EC3F24F82320007A1CDA /* AppDelegate.swift in Sources */,
 				6340EC4124F82320007A1CDA /* SceneDelegate.swift in Sources */,
 			);

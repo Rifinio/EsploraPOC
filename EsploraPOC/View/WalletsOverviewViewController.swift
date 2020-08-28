@@ -13,7 +13,7 @@ class WalletsOverviewViewController: UIViewController {
     
     var balanceLabel: UILabel = {
         let l = UILabel()
-        l.textAlignment = .center
+        l.textAlignment = .left
         l.numberOfLines = 0
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
@@ -68,12 +68,12 @@ extension WalletsOverviewViewController: ViewSetupable {
         view.backgroundColor = AppStyle.Color.primary
         collectionView.backgroundColor = AppStyle.Color.primary
         balanceLabel.textColor = AppStyle.Color.white
-        balanceLabel.font = AppStyle.Font.largeTitle
+        balanceLabel.font = AppStyle.Font.defaultTitle
     }
     
     func setupView() {
         view.backgroundColor = .white
-        title = "Esplora Wallets"
+        title = "My Wallets"
 
         view.addSubview(balanceLabel)
         view.addSubview(collectionView)
@@ -82,7 +82,8 @@ extension WalletsOverviewViewController: ViewSetupable {
         collectionView.register(WalletViewCell.self, forCellWithReuseIdentifier: WalletViewCell.identifier)
         // collection view layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.bounds.width - 20, height: 60)
+        let width = view.bounds.width - 20
+        layout.itemSize = CGSize(width: view.bounds.width - 20, height: width * 1/2)
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
     

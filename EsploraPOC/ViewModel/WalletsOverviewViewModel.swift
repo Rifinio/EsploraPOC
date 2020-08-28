@@ -20,17 +20,22 @@ class WalletsOverviewViewModel {
     func loadWallets(completion: @escaping ([Wallet])->Void) {
         blockChainStore.loadWallets { [weak self] wallets in
             guard let self = self else { return }
-            self.wallets = wallets
+            self.wallets = self.sortedWallets(wallets: wallets)
             var total: Satoshi = 0
             for w in wallets {
                 total += w.balance
             }
-            self.balanceTitle = "Total Balance: \(total.toBtc) btc"
+            let convertedPrice = ConversionService.shared.converToUsd(amount: total.toBtc)
+            self.balanceTitle = "Total Balance\n" + "\(total.toBtc) btc = $ \(convertedPrice)".uppercased()
             completion(wallets)
         }
     }
     
     func viewModelForCellAt(indexPath: IndexPath) -> WalletViewCellViewModel {
         return WalletViewCellViewModel(wallet: wallets[indexPath.row])
+    }
+    
+    private func sortedWallets(wallets: [Wallet]) -> [Wallet] {
+        return wallets.sorted { $0.balance > $1.balance }
     }
 }
