@@ -8,23 +8,54 @@
 
 import UIKit
 
-class TransactionsViewController: UIViewController {
+struct TransactionsViewViewModel {
+    var transactions: [Transaction] = Transaction.mockTransactions()
+}
+
+class TransactionsViewController: BaseViewController {
+    var transactions: [Transaction] = Transaction.mockTransactions()
+    private var tableView: UITableView = {
+        let tv = UITableView(frame: .zero, style: .plain)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func setupView() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: "cellid")
     }
-    */
+    
+    override func setupConstraints() {
+        tableView.pinToEgesOf(view: view)
+    }
+    
+    override func setupTheme() {
+        view.backgroundColor = AppStyle.Color.primary
+        tableView.backgroundColor = .clear
+    }
+}
 
+extension TransactionsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transactions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid") as! TransactionTableViewCell
+        // temp
+        let cellViewModel = TransactionTableViewCellViewModel(transaction: transactions[indexPath.row])
+        cell.configure(viewModel: cellViewModel)
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
 }

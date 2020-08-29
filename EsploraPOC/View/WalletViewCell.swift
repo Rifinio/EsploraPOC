@@ -44,7 +44,7 @@ class WalletViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupView()
         setupConstraints()
-        theme()
+        setupTheme()
     }
     
     required init?(coder: NSCoder) {
@@ -61,18 +61,19 @@ class WalletViewCell: UICollectionViewCell {
 }
 
 extension WalletViewCell: ViewSetupable {
-    func theme() {
-        showBorder(color: .gray, width: 0.2)
+    func setupTheme() {
+        showBorder(color: .gray, width: 0.3)
         contentView.layer.cornerRadius = 10.0
         contentView.layer.masksToBounds = true
+        contentView.clipsToBounds = true
 
-        addressLabel.font = AppStyle.Font.smallTitle
+        addressLabel.font = AppStyle.Font.sTitle
         addressLabel.textColor = AppStyle.Color.accent
         
-        convertedLabel.font = AppStyle.Font.smallTitle
+        convertedLabel.font = AppStyle.Font.sTitle
         convertedLabel.textColor = AppStyle.Color.white
         
-        balanceLabel.font = AppStyle.Font.largeTitle
+        balanceLabel.font = AppStyle.Font.lTitle
         balanceLabel.textColor = AppStyle.Color.accent
     }
     
@@ -88,35 +89,46 @@ extension WalletViewCell: ViewSetupable {
         let insets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
         backgroundImageView.pinToEgesOf(view: contentView)
 
-        cryptoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: insets.left).isActive = true
-        cryptoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: insets.top).isActive = true
-        cryptoImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        cryptoImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        cryptoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: insets.left).activate()
+        cryptoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: insets.top).activate()
+        cryptoImageView.widthAnchor.constraint(equalToConstant: 25).activate()
+        cryptoImageView.heightAnchor.constraint(equalToConstant: 25).activate()
         
-        addressLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: insets.left).isActive = true
-        addressLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: insets.bottom).isActive = true
-        addressLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: insets.right).isActive = true
+        addressLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: insets.left).activate()
+        addressLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: insets.bottom).activate()
+        addressLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: insets.right).activate()
         
-        balanceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: insets.left).isActive = true
-        balanceLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: insets.right).isActive = true
-        balanceLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -20).isActive = true
+        balanceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: insets.left).activate()
+        balanceLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: insets.right).activate()
+        balanceLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -20).activate()
         
-        convertedLabel.leadingAnchor.constraint(equalTo: balanceLabel.leadingAnchor).isActive = true
-        convertedLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: insets.right).isActive = true
-        convertedLabel.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: insets.top).isActive = true
+        convertedLabel.leadingAnchor.constraint(equalTo: balanceLabel.leadingAnchor).activate()
+        convertedLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: insets.right).activate()
+        convertedLabel.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: insets.top).activate()
     }
 }
 
 extension UIView {
+    func layoutWith(size: CGSize) {
+        widthAnchor.constraint(equalToConstant: size.width).activate()
+        heightAnchor.constraint(equalToConstant: size.height).activate()
+    }
+    
     func pinToEgesOf(view: UIView, insets: UIEdgeInsets = .zero) {
-        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left).isActive = true
-        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: insets.right).isActive = true
-        topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: insets.bottom).isActive = true
+        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left).activate()
+        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: insets.right).activate()
+        topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).activate()
+        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: insets.bottom).activate()
     }
     
     func showBorder(color: UIColor = .red, width: CGFloat = 1.0) {
         layer.borderWidth = width
         layer.borderColor = color.cgColor
+    }
+}
+
+extension NSLayoutConstraint {
+    func activate(_ bool: Bool = true) {
+        isActive = bool
     }
 }

@@ -9,5 +9,5 @@
 protocol ViewSetupable {
     func setupView()
     func setupConstraints()
-    func theme()
+    func setupTheme()
 }

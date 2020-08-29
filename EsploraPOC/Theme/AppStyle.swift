@@ -16,8 +16,9 @@ struct AppStyle {
     }
     
     struct Font {
-        static let largeTitle: UIFont = UIFont.systemFont(ofSize: 23)
-        static let defaultTitle: UIFont = UIFont.systemFont(ofSize: 18)
-        static let smallTitle: UIFont = UIFont.systemFont(ofSize: 14)
+        static let lTitle: UIFont = UIFont.systemFont(ofSize: 23)
+        static let mTitle: UIFont = UIFont.systemFont(ofSize: 18)
+        static let sTitle: UIFont = UIFont.systemFont(ofSize: 14)
+        static let xsTitle: UIFont = UIFont.systemFont(ofSize: 11)
     }
 }

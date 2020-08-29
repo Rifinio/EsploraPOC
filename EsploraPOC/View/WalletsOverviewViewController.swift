@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WalletsOverviewViewController: UIViewController {
+class WalletsOverviewViewController: BaseViewController {
     private let viewModel: WalletsOverviewViewModel
     
     var balanceLabel: UILabel = {
@@ -36,10 +36,6 @@ class WalletsOverviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupView()
-        setupConstraints()
-        theme()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,19 +43,7 @@ class WalletsOverviewViewController: UIViewController {
         loadData()
     }
     
-    private func loadData() {
-        viewModel.loadWallets { _ in
-            DispatchQueue.main.async {
-                print("done loading wallet")
-                self.collectionView.reloadData()
-                self.balanceLabel.text = self.viewModel.balanceTitle
-            }
-        }
-    }
-}
-
-extension WalletsOverviewViewController: ViewSetupable {
-    func theme() {
+    override func setupTheme() {
         // navigation
         navigationController?.navigationBar.prefersLargeTitles = true
         let textAttributes = [NSAttributedString.Key.foregroundColor: AppStyle.Color.white]
@@ -68,10 +52,10 @@ extension WalletsOverviewViewController: ViewSetupable {
         view.backgroundColor = AppStyle.Color.primary
         collectionView.backgroundColor = AppStyle.Color.primary
         balanceLabel.textColor = AppStyle.Color.white
-        balanceLabel.font = AppStyle.Font.defaultTitle
+        balanceLabel.font = AppStyle.Font.mTitle
     }
     
-    func setupView() {
+    override func setupView() {
         view.backgroundColor = .white
         title = "My Wallets"
 
@@ -87,15 +71,25 @@ extension WalletsOverviewViewController: ViewSetupable {
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
     
-    func setupConstraints() {
-        balanceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        balanceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        balanceLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+    override func setupConstraints() {
+        balanceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).activate()
+        balanceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).activate()
+        balanceLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).activate()
         
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: 20).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).activate()
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).activate()
+        collectionView.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: 20).activate()
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).activate()
+    }
+    
+    private func loadData() {
+        viewModel.loadWallets { _ in
+            DispatchQueue.main.async {
+                print("done loading wallet")
+                self.collectionView.reloadData()
+                self.balanceLabel.text = self.viewModel.balanceTitle
+            }
+        }
     }
 }
 
@@ -112,8 +106,7 @@ extension WalletsOverviewViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .yellow
+        let vc = TransactionsViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

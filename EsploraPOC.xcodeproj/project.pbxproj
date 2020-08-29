@@ -25,6 +25,9 @@
 		6340EC8224F9779F007A1CDA /* MockBlockchainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8124F9779F007A1CDA /* MockBlockchainStore.swift */; };
 		6340EC8424F99F45007A1CDA /* ConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8324F99F45007A1CDA /* ConversionService.swift */; };
 		6340EC8624F9A516007A1CDA /* WalletViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8524F9A516007A1CDA /* WalletViewCellViewModel.swift */; };
+		6340EC8824FA64E7007A1CDA /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8724FA64E7007A1CDA /* TransactionsViewController.swift */; };
+		6340EC8A24FA6563007A1CDA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8924FA6563007A1CDA /* BaseViewController.swift */; };
+		6340EC8C24FA68B0007A1CDA /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340EC8B24FA68B0007A1CDA /* TransactionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		6340EC8124F9779F007A1CDA /* MockBlockchainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBlockchainStore.swift; sourceTree = "<group>"; };
 		6340EC8324F99F45007A1CDA /* ConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionService.swift; sourceTree = "<group>"; };
 		6340EC8524F9A516007A1CDA /* WalletViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCellViewModel.swift; sourceTree = "<group>"; };
+		6340EC8724FA64E7007A1CDA /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		6340EC8924FA6563007A1CDA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6340EC8B24FA68B0007A1CDA /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				6340EC7524F82D8B007A1CDA /* ViewSetupable.swift */,
+				6340EC8924FA6563007A1CDA /* BaseViewController.swift */,
 				6340EC6424F8255F007A1CDA /* WalletsOverviewViewController.swift */,
 				6340EC7324F82D54007A1CDA /* WalletViewCell.swift */,
+				6340EC8724FA64E7007A1CDA /* TransactionsViewController.swift */,
+				6340EC8B24FA68B0007A1CDA /* TransactionTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +311,8 @@
 				6340EC7024F82BB0007A1CDA /* HttpClient.swift in Sources */,
 				6340EC6A24F825C5007A1CDA /* Transaction.swift in Sources */,
 				6340EC7C24F837D4007A1CDA /* WalletService.swift in Sources */,
+				6340EC8824FA64E7007A1CDA /* TransactionsViewController.swift in Sources */,
+				6340EC8A24FA6563007A1CDA /* BaseViewController.swift in Sources */,
 				6340EC7624F82D8B007A1CDA /* ViewSetupable.swift in Sources */,
 				6340EC7424F82D54007A1CDA /* WalletViewCell.swift in Sources */,
 				6340EC7924F82E29007A1CDA /* AppStyle.swift in Sources */,
@@ -310,6 +321,7 @@
 				6340EC6324F82525007A1CDA /* WalletsOverviewViewModel.swift in Sources */,
 				6340EC8624F9A516007A1CDA /* WalletViewCellViewModel.swift in Sources */,
 				6340EC3F24F82320007A1CDA /* AppDelegate.swift in Sources */,
+				6340EC8C24FA68B0007A1CDA /* TransactionTableViewCell.swift in Sources */,
 				6340EC4124F82320007A1CDA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
